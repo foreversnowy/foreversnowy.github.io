@@ -89,7 +89,12 @@ Window.onload 与 $(document).ready 的区,">
 <p><strong>分析原因</strong></p>
 <ul>
 <li>作用域 , Window.onload 完成后改变了 demo() 函数的作用域 , 不是在 window.onload 方法下 , 而是在全局执行环境中 , 即 Window</li>
-<li>而根据 JS 的作用域 , 在函数外部是不能访问到函数内部的变量和方法的 , Window.onload 对于 window 来说只是局部的 , 所以会提示 demo() 函数是没有定义的<br>解决方案</li>
+<li>而根据 JS 的作用域 , 在函数外部是不能访问到函数内部的变量和方法的 , Window.onload 对于 window 来说只是局部的 , 所以会提示 demo() 函数是没有定义的  </li>
+</ul>
+<br>
+
+<p><strong>解决方案</strong></p>
+<ul>
 <li>将 demo 函数写在 window.onload 外部  </li>
 <li>使用 DOM 提取元素 , 然后直接绑定事件<br><img src="https://forever-1258828479.cos.ap-beijing.myqcloud.com/myblog/page/onload/3.png" alt="未失效"><br><img src="https://forever-1258828479.cos.ap-beijing.myqcloud.com/myblog/page/onload/4.png" alt="未失效"></li>
 </ul>
