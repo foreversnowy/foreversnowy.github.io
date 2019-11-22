@@ -11,7 +11,10 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="foreversnowy,有时四月会降雪,"> 
     <meta name="description" content="有时四月会降雪的博客,浏览器兼容一直是我们头疼的问题 , 很多好用的CSS属性在不同浏览器中显示不同的效果甚至没有效果 , @support正是为此诞生的
-@support用于检测当前浏览器版本是否支持CSS的某个属性 ,"> 
+
+
+
+@support用于检测当前浏览器版本是否支持CSS的某个,"> 
     <meta name="author" content="Snow"> 
     <link rel="alternative" href="atom.xml" title="有时四月会降雪 丨 个人博客" type="application/atom+xml"> 
     <link rel="icon" href="https://forever-1258828479.cos.ap-beijing.myqcloud.com/myblog/img/butterfly.ico"> 
@@ -63,8 +66,17 @@
         </div>
         <div class="content markdown">
             <p><strong>浏览器兼容一直是我们头疼的问题 , 很多好用的CSS属性在不同浏览器中显示不同的效果甚至没有效果 , @support正是为此诞生的</strong></p>
-<p><strong>@support</strong><br>用于检测当前浏览器版本是否支持CSS的某个属性 , 本质上是条件判断</p>
+<hr>
+<br>
 
+<p><strong>@support</strong><br>用于检测当前浏览器版本是否支持CSS的某个属性 , 本质上是条件判断</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@supports(prop: value) &#123;</span><br><span class="line">    <span class="comment">/* 如果条件成立 , 准备展示的样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p><strong>举个栗子</strong><br><font size=2>如果浏览器支持 text-shadow: 5px 5px 5px #F00 属性<br>则 h1 的样式为 text-shadow: 5px 5px 5px #F00</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@supports(text-shadow: 5px 5px 5px #F00) &#123;</span><br><span class="line">    <span class="selector-tag">h1</span> &#123;</span><br><span class="line">        <span class="attribute">text-shadow</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">5px</span> <span class="number">#F00</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="auto">
                 <source type="audio/mpeg" src="">
