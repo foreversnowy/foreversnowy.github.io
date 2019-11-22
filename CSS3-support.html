@@ -69,14 +69,38 @@
 <hr>
 <br>
 
-<p><strong>@support</strong><br>用于检测当前浏览器版本是否支持CSS的某个属性 , 本质上是条件判断</p>
+<p><strong>@support</strong><br><font size=2>用于检测当前浏览器版本是否支持CSS的某个属性 , 本质上是条件判断</font></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@supports(prop: value) &#123;</span><br><span class="line">    <span class="comment">/* 如果条件成立 , 准备展示的样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <br>
 
-<p><strong>举个栗子</strong><br><font size=2>如果浏览器支持 text-shadow: 5px 5px 5px #F00 属性<br>则 h1 的样式为 text-shadow: 5px 5px 5px #F00</font></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@supports(text-shadow: 5px 5px 5px #F00) &#123;</span><br><span class="line">    <span class="selector-tag">h1</span> &#123;</span><br><span class="line">        <span class="attribute">text-shadow</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">5px</span> <span class="number">#F00</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>举个栗子</strong><br><font size=2>如果浏览器支持 text-shadow: 5px 5px #F00 属性<br>则 h1 的样式为 text-shadow: 5px 5px #F00</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@supports(text-shadow: 5px 5px #F00) &#123;</span><br><span class="line">    <span class="selector-tag">h1</span> &#123;</span><br><span class="line">        <span class="attribute">text-shadow</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">#F00</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p><strong>逻辑操作符 not</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span> not (准备测试的样式) &#123;</span><br><span class="line">    <span class="comment">/* 如果当前浏览器不支持测试的样式 , 则执行此段样式作为补救样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p><strong>逻辑操作符 and</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span>(准备测试的样式一) and (准备测试的样式二)&#123;</span><br><span class="line">    <span class="comment">/* 当俩种测试的样式当前浏览器都支持时 , 则执行此处样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p><strong>逻辑操作符 or</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span>(准备测试的样式一) or (准备测试的样式二)&#123;</span><br><span class="line">    <span class="comment">/* 当俩种测试的样式当前浏览器支持任意一种时 , 则执行此处样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<p><strong>混合操作</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span>(准备测试的样式一) or ((准备测试的样式二) and (准备的测试的样式三))&#123;</span><br><span class="line">    <span class="comment">/* 注意使用括号来区分优先级 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="auto">
                 <source type="audio/mpeg" src="">
